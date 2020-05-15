@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ProfilePicture from './ProfilePicture';
+import SlidePanel from './SlidePanel';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    devCount: 2,
+    currentDevId: 1
+  }
+  handleNextButton = () => {
+    let updatedDevId = this.state.currentDevId;
+    if (this.state.currentDevId <= this.state.devCount - 1){
+      updatedDevId += 1;
+    }else{
+      updatedDevId = 1;
+    }
+    this.setState({
+      currentDevId: updatedDevId
+    });
+    console.log(`Updated dev ID is: ${updatedDevId}`);
+  }
+  handlePrevButton = () => {
+    let updatedDevId = this.state.currentDevId;
+    if (this.state.currentDevId >= this.state.devCount){
+      updatedDevId -= 1;
+    }else{
+      updatedDevId = this.state.devCount;
+    }
+    this.setState({
+      currentDevId: updatedDevId
+    });
+    console.log(`Updated dev ID is: ${updatedDevId}`);
+  }
+  render(){
+    return (
+      <div className="App">
+        <ProfilePicture currentDevId={this.state.currentDevId}/>
+        <SlidePanel handlePrevButton={this.handlePrevButton} handleNextButton={this.handleNextButton}/>
+      </div>
+    );
+  }
 }
 
 export default App;
