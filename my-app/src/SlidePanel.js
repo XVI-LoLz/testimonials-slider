@@ -1,18 +1,18 @@
 import React from 'react';
-import PrevIcon from './images/icon-prev.svg';
-import NextIcon from './images/icon-next.svg';
+import prevIcon from './images/icon-prev.svg';
+import nextIcon from './images/icon-next.svg';
 
 const SlidePanel = (props) => {
   return(
-    <>
-      <button onClick={() => props.handlePrevButton()}>
-        <img src={PrevIcon} alt='Go to previous'/>
+    <div className='slide-panel'>
+      <button className='nav-button left' onClick={() => props.handlePrevButton()}>
+        <img className='nav-icon' src={prevIcon} alt='Go to previous'/>
       </button>
 
-      <button onClick={() => props.handleNextButton()}>
-        <img src={NextIcon} alt='Go to next'/>
+      <button className='nav-button right' onClick={() => props.handleNextButton()}>
+        <img className='nav-icon' src={nextIcon} alt='Go to next'/>
       </button>
-    </>
+    </div>
   );
 }
 

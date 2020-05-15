@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  width: 375px;
+  height: 667px;
+  font-family: 'Inter';
+}
+
+.App-picture-section{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 375px;
+  height: 333px;
+  background-image: url('./images/pattern-bg.svg');
+  background-repeat: no-repeat;
+  background-size: 50vh;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-picture{
+  width: 247px;
+  margin-top: 10%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0px 16px 24px hsla(240, 37%, 20%, 0.349);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide-panel{
+  position: relative;
+  transform: translate(0,-50%);
+  box-shadow: 0 16px 24px hsla(240, 37%, 20%, 0.349);
+  border-radius: 50%;
+}
+
+.slide-panel .nav-button{
+  height: 28px;
+  width: 32px;
+  border: none;
+  background-color: white;
+}
+
+.nav-icon{
+  transform: translate(0,8%);
+  transform: scale(0.66);
+}
+
+.left{
+  border-radius: 50% 0 0 50%;
+}
+
+.right{
+  border-radius: 0 50% 50% 0;
+}
+
+.App-description-section{
+
+}
+
+.dev-description{
+  background-image: url('./images/pattern-quotes.svg');
+  background-position: top;
+  background-size: 3rem;
+  background-repeat: no-repeat;
+}
+
+.profile-quote{
+  font-weight: 300;
+  padding: 5% 10% 5%;
+}
+
+.profile-name{
+  color:hsl(240, 38%, 20%);
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-position{
+  color: hsl(240, 18%, 77%);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.footer{
+  position: absolute;
+  top: 100%;
+  width: 375px;
+  height: 80px;
+  transform: translate(-30%,-100%);
+  background-repeat: no-repeat;
+  background-image: url('./images/pattern-curve.svg');
+  z-index: -100;
 }
